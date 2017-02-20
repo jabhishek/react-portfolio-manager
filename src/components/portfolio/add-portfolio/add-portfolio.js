@@ -4,26 +4,26 @@ import TextField from 'material-ui/TextField';
 import styles from './add-portfolio.less';
 
 export default class AddPortfolio extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            portfolio: ''
-        };
-    }
+  constructor (props) {
+    super(props);
+    this.state = {
+      portfolio: ''
+    };
+  }
 
-    addPortfolio(e) {
-        this.props.addPortfolio(this.state.portfolio);
-        e.preventDefault();
-    }
+  addPortfolio (e) {
+    this.props.addPortfolio(this.state.portfolio);
+    e.preventDefault();
+  }
 
-    onPortfolioChanged(e) {
-        this.setState({
-           portfolio: e.target.value
-        });
-    }
+  onPortfolioChanged (e) {
+    this.setState({
+      portfolio: e.target.value
+    });
+  }
 
-    render() {
-        return (
+  render () {
+    return (
             <div className={styles.addPortfolio}>
                 <Subheader headerText="Add New Portfolio"></Subheader>
                 <form onSubmit={ this.addPortfolio.bind(this) }>
@@ -32,9 +32,9 @@ export default class AddPortfolio extends Component {
                                 onChange={ this.onPortfolioChanged.bind(this) }/>
                 </form>
             </div>
-        );
-    }
+    );
+  }
 }
 AddPortfolio.propTypes = {
-    addPortfolio: PropTypes.func
+  addPortfolio: PropTypes.func
 };

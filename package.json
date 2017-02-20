@@ -7,7 +7,8 @@
     "test": "./node_modules/.bin/karma start",
     "build": "./node_modules/.bin/webpack",
     "server": "nodemon server/index.js",
-    "start": "concurrent \"npm run build\" \"npm run server\""
+    "start": "concurrent \"npm run build\" \"npm run server\"",
+    "eslint:watch": "esw -w --color --fix"
   },
   "repository": {
     "type": "git",
@@ -36,8 +37,12 @@
     "css-loader": "^0.25.0",
     "enzyme": "^2.4.1",
     "eslint": "^3.1.1",
+    "eslint-config-standard": "6.2.1",
     "eslint-loader": "^1.4.1",
+    "eslint-plugin-promise": "3.4.2",
     "eslint-plugin-react": "^6.2.0",
+    "eslint-plugin-standard": "2.0.1",
+    "eslint-watch": "2.1.14",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
     "extract-text-webpack-plugin": "^1.0.1",

@@ -1,25 +1,15 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styles from './page-header.less';
-import { connect } from 'react-redux';
 
-class Header extends Component {
-	render() {
-		return (
-			<div className={ styles.header }>
-				<h1>Portfolio Manager</h1>
-			</div>
-		);
-	}
+export default class Header extends Component {
+  render () {
+    return (
+      <div className={ styles.header }>
+        <h1>Portfolio Manager</h1>
+      </div>
+    );
+  }
 }
 Header.propTypes = {
-	authActions: React.PropTypes.object
+  authActions: React.PropTypes.object
 };
-
-const mapDispatchToProps = () => {
-	return { };
-};
-
-export default connect(
-	null,
-	mapDispatchToProps
-)(Header);
