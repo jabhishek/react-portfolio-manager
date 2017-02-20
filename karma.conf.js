@@ -7,7 +7,7 @@ module.exports = function (config) {
     basePath: '',
 
         // frameworks to use
-    frameworks: ['jasmine'],
+    frameworks: ['mocha'],
 
         // list of files / patterns to load in the browser
     files: [
@@ -106,7 +106,7 @@ module.exports = function (config) {
         // won't work here
     plugins: [
       'karma-webpack',
-      'karma-jasmine',
+      'karma-mocha',
       'karma-spec-reporter',
       'karma-chrome-launcher'
     ]
