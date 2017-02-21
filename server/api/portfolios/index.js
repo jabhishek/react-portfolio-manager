@@ -10,7 +10,7 @@ module.exports = function (db) {
 
   router.get('/', authService.authenticate, function (req, res) {
     co(function*() {
-      const docs = yield portfolios.find().toArray();
+      const docs = yield portfolios.find({ userName: req.user.id }).toArray();
       res.json({
         'portfolios': docs
       }).end();
