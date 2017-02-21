@@ -9,9 +9,9 @@ module.exports = function (db) {
 
   router.get('/me', authService.authenticate, function (req, res) {
     co(function*() {
-      console.log(req.user);
+      console.log('me', req.user);
       const user = yield usersCol.findOne({ username: req.user.id });
-      console.log(user);
+      // console.log(user);
       if (user) {
         res.json({
           user: user

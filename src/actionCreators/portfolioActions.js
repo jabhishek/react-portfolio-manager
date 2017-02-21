@@ -51,8 +51,13 @@ export const addPortfolio = (portfolio) => {
         .set('Authorization', `Bearer ${token}`)
         .end((err, res) => {
           if (err) {
+            const message = JSON.parse(err.response.text);
+            console.log(message);
+            reject(message);
             //  dispatch(loginUserFailure(errorMessages));
           } else {
+            console.log(err);
+            console.log('res', res);
             const {_id} = JSON.parse(res.text);
             dispatch(addPortfolioSuccess({_id, portfolio}));
             resolve();

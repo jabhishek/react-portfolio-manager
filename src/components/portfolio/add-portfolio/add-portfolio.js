@@ -12,7 +12,13 @@ export default class AddPortfolio extends Component {
   }
 
   addPortfolio (e) {
-    this.props.addPortfolio(this.state.portfolio);
+    this.props.addPortfolio(this.state.portfolio)
+      .then(() => {
+        console.log('portfolio created successfully');
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
     e.preventDefault();
   }
 

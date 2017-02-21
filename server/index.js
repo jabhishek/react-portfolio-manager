@@ -12,7 +12,6 @@ const appPath = path.join(rootPath, 'dist');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-console.log(appPath);
 app.use(serveStatic(appPath));
 app.set('appPath', appPath);
 app.use(passport.initialize());
