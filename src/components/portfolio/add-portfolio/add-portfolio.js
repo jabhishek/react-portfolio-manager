@@ -15,6 +15,9 @@ export default class AddPortfolio extends Component {
     this.props.addPortfolio(this.state.portfolio)
       .then(() => {
         console.log('portfolio created successfully');
+        this.setState({
+          portfolio: ''
+        });
       })
       .catch(err => {
         console.log(err.message);

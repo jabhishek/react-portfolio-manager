@@ -30,7 +30,7 @@ module.exports = function (db) {
       switch (err.code) {
         case '11000': {
           message = 'Portfolio already exists. Please choose another portfolio name';
-          break
+          break;
         }
         default: {
           message = 'Error creating portfolio. Please try again.';
