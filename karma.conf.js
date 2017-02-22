@@ -29,10 +29,7 @@ module.exports = function (config) {
           {
             test: /\.js$/,
             loader: 'babel-loader',
-            exclude: /node_modules/,
-            query: {
-              presets: ['airbnb']
-            }
+            exclude: /node_modules/
           },
           {
             test: /\.less$/,

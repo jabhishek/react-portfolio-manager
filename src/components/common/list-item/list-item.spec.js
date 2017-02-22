@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import ListItem from './list-item';
-import { expect } from 'chai';
+import {expect} from 'chai';
 
 describe('ListItem', () => {
   it('should have the class list', () => {

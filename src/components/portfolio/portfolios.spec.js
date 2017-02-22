@@ -60,11 +60,11 @@ describe('Portfolios', () => {
   describe('PortfolioList', () => {
     it('should be present', () => {
       const {wrapper} = setup();
-      expect(wrapper.find('PortfolioList').length).to.equal(1);
+      expect(wrapper.find('Connect(PortfolioList)').length).to.equal(1);
     });
     it('should have portfolios property set as ', () => {
       const {wrapper} = setup(['XYZ']);
-      const props = wrapper.find('PortfolioList').props();
+      const props = wrapper.find('Connect(PortfolioList)').props();
       expect(props.portfolios).to.deep.equal(['XYZ']);
     });
   });

@@ -1,6 +1,6 @@
 import React from 'react';
 import Subheader from '../common/sub-header/sub-header';
-import PortfolioList from './portfolio-list/portfolio-list';
+import PortfolioList from './portfolio-list/portfolio-list-connect';
 import AddPortfolio from './add-portfolio/add-portfolio-connect';
 
 export default class PortfolioPage extends React.Component {

@@ -55,14 +55,15 @@ describe('Add Portfolio', () => {
       });
     });
   })
-  describe('Add portfolio', () => {
+  describe('On Submit', () => {
     it('should reset the portfolio input on submit if success', () => {
       wrapper = shallow(<AddPortfolio addPortfolio={ createAddPortfolio(true) }/>);
       wrapper.setState({ portfolio: 'Test' });
       const form = wrapper.find('form');
       form.prop('onSubmit')({ preventDefault: noop });
-
-      expect(wrapper.state().portfolio).to.equal('');
+      setTimeout(() => {
+        expect(wrapper.state().portfolio).to.equal('');
+      }, 0);
     })
 
     it('should not reset the portfolio input on submit if error', () => {
