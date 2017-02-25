@@ -104,6 +104,7 @@ module.exports = function (config) {
     plugins: [
       'karma-webpack',
       'karma-mocha',
+      'karma-sinon-chai',
       'karma-spec-reporter',
       'karma-chrome-launcher'
     ]

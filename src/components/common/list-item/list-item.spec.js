@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import ListItem from './list-item';
 import {expect} from 'chai';
-
+import sinon from 'sinon';
 describe('ListItem', () => {
   it('should have the class list', () => {
     const wrapper = shallow(<ListItem />);
@@ -19,5 +19,13 @@ describe('ListItem', () => {
       <li>Hey</li>
     </ListItem>);
     expect(wrapper.contains(<li>Hey</li>)).to.equal(true);
+  });
+  it('should invoke onClick handler on click', () => {
+    const spy = sinon.spy();
+    const wrapper = shallow(<ListItem onClick={spy}>
+      <li>Hey</li>
+    </ListItem>);
+    wrapper.simulate('click');
+    expect(spy).to.have.been.calledOnce;
   });
 });

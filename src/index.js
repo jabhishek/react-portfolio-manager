@@ -9,6 +9,7 @@ import {syncHistoryWithStore, routerReducer, routerMiddleware, push} from 'react
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 import {getLoggedInUser, saveUser, logoutUser} from './actionCreators/authActions';
+import {getPortfolios} from './actionCreators/portfolioActions';
 
 const reducer = combineReducers({
   ...reducers,
@@ -42,15 +43,17 @@ function renderApp () {
   ), document.getElementById('root'));
 }
 
-getLoggedInUser().then((user) => {
-  store.dispatch(saveUser(user));
-  renderApp();
-}).catch(() => {
-  const path = store.getState().routing.locationBeforeTransitions.pathname;
+getLoggedInUser()
+  .then((user) => {
+    store.dispatch(saveUser(user));
+    store.dispatch(getPortfolios())
+      .then(() => renderApp());
+  }).catch(() => {
+    const path = store.getState().routing.locationBeforeTransitions.pathname;
 
-  if (path !== '/login-redirect') {
-    store.dispatch(logoutUser());
-    store.dispatch(push('login'));
-  }
-  renderApp();
-});
+    if (path !== '/login-redirect') {
+      store.dispatch(logoutUser());
+      store.dispatch(push('login'));
+    }
+    renderApp();
+  });

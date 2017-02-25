@@ -15,14 +15,14 @@ const createAddPortfolio = shouldResolve => portfolio => {
 };
 
 describe('Add Portfolio', () => {
-  let wrapper
+  let wrapper;
   afterEach(() => {
     wrapper && wrapper.unmount();
-  })
+  });
   describe('with default props', () => {
     beforeEach(() => {
       wrapper = shallow(<AddPortfolio />);
-    })
+    });
 
     it('should have a subheader', () => {
       const subheader = wrapper.find('SubHeader');
@@ -54,7 +54,7 @@ describe('Add Portfolio', () => {
         expect(wrapper.find('TextField').props().value).to.equal('PF');
       });
     });
-  })
+  });
   describe('On Submit', () => {
     it('should reset the portfolio input on submit if success', () => {
       wrapper = shallow(<AddPortfolio addPortfolio={ createAddPortfolio(true) }/>);
@@ -64,7 +64,7 @@ describe('Add Portfolio', () => {
       setTimeout(() => {
         expect(wrapper.state().portfolio).to.equal('');
       }, 0);
-    })
+    });
 
     it('should not reset the portfolio input on submit if error', () => {
       wrapper = shallow(<AddPortfolio addPortfolio={ createAddPortfolio(false) }/>);
@@ -73,6 +73,6 @@ describe('Add Portfolio', () => {
       form.prop('onSubmit')({ preventDefault: noop });
 
       expect(wrapper.state().portfolio).to.equal('Test');
-    })
+    });
   });
 });
