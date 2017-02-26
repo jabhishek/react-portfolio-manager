@@ -10,7 +10,6 @@ import React from 'react';
 export const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Trades}/>
-    <Route path="/trades" component={Trades}/>
     <Route path="/login-redirect" component={LoginRedirect}/>
     <Route path="/login" component={LoginPage}/>
     <Route path="/portfolios" component={Portfolios}/>
