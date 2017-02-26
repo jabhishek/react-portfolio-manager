@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import TradesForm from '../trades-form/trades-form';
+import TradesForm from './trades-form/trades-form';
 
 class Portfolio extends Component {
   render () {
