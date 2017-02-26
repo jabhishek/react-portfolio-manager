@@ -4,10 +4,6 @@ import PortfolioList from './portfolio-list/portfolio-list-connect';
 import AddPortfolio from './add-portfolio/add-portfolio-connect';
 
 export default class PortfolioPage extends React.Component {
-  componentWillMount () {
-    this.props.portfolioActions.getPortfolios();
-  }
-
   render () {
     return (
       <div className="container">
@@ -20,7 +16,6 @@ export default class PortfolioPage extends React.Component {
   }
 }
 PortfolioPage.propTypes = {
-  portfolioActions: React.PropTypes.object,
   portfolios: React.PropTypes.array
 };
 

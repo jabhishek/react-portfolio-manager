@@ -7,5 +7,5 @@ describe('portfolio', () => {
   it('should exist', () => {
     const wrapper = shallow(<Portfolio/>);
     expect(wrapper).to.exist;
-  })
-})
+  });
+});

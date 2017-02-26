@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import TradesForm from '../trades-form/trades-form';
 
 class Portfolio extends Component {
   render () {
@@ -6,7 +7,7 @@ class Portfolio extends Component {
     console.log(this.props, portfolio);
     return (
       <div className="portfolio">
-        Portfolio
+        <TradesForm/>
       </div>
     );
   }
